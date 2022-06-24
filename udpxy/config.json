@@ -21,7 +21,7 @@
     "ssl:rw"
   ],
   "options": {
-    "port": 5056
+    "port": 555
   },
   "schema": {
     "port": "int"
