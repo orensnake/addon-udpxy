@@ -1,8 +1,9 @@
 #Based on official wireguard addon
-ARG BUILD_FROM=alpine:3.16.0
+#ARG BUILD_FROM=alpine:3.16.0
 # ghcr.io/hassio-addons/base/amd64:9.1.2
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 # Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
