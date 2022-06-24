@@ -5,7 +5,7 @@
 # ==============================================================================
 declare port
 
-port="5056"
+port="555"
 if bashio::config.has_value "port"; then
     port=$(bashio::config "port")
 fi
