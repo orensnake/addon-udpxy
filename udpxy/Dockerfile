@@ -1,15 +1,18 @@
 #Based on official wireguard addon
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.2
+ARG BUILD_FROM=alpine:3.16.0
+# ghcr.io/hassio-addons/base/amd64:9.1.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    set -o pipefail \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
         git=2.32.2-r0 \
     \
