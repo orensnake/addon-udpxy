@@ -2,7 +2,7 @@
 declare port
 s6-svc -O /var/run/s6/services/udpxy
 
-port="5056"
+port="555"
 if bashio::config.has_value "port"; then
     port=$(bashio::config "port")
 fi
